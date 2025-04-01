@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import logo from "../../../../../public/logo.png";
 
 const SignupPage = () => {
@@ -97,7 +97,10 @@ const SignupPage = () => {
 
           <p className="mt-4 text-center text-gray-700">
             Already have an account?
-            <Link href="/pages/auth/signin" className="text-[#b92d14e8] font-medium">
+            <Link
+              href="/pages/auth/signin"
+              className="text-[#b92d14e8] font-medium"
+            >
               {" "}
               Sign in
             </Link>
