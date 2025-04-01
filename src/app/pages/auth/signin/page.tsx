@@ -85,7 +85,7 @@ const SigninPage = () => {
     
               <p className="mt-4 text-center text-gray-700">
                 Don't have an account?
-                <Link href="/auth/signup" className="text-[#b92d14e8] font-medium">
+                <Link href="/pages/auth/signup" className="text-[#b92d14e8] font-medium">
                   {" "}
                   Sign up
                 </Link>
