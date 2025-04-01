@@ -7,7 +7,7 @@ import logo from "../../../public/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(true);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   return (
     <nav className="bg-gray-900 text-white p-4 shadow-md">
     <div className="container mx-auto flex justify-between items-center">
