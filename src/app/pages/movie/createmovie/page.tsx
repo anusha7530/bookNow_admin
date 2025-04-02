@@ -149,8 +149,8 @@ const CreateMoviePage = () => {
   };
 
   return (
-
     <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+      <h2 className="text-center font-bold text-2xl md:text-3xl mb-2 text-[#b92d14e8]">Add a movie</h2>
       <label className="block text-[#b92d14e8] mb-1">Title</label>
       <input
         type="text"
