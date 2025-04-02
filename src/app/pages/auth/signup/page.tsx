@@ -27,7 +27,6 @@ const SignupPage = () => {
       if (response.ok) {
         const data = await response.json();
         // Handle successful signup, e.g., show a success message
-        console.log("Admin registration successful", data);
 
         toast.success("Admin Registration Successful", {
           position: "top-center",

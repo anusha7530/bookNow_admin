@@ -68,7 +68,6 @@ const CreateMoviePage = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Image uploaded successfully:", data);
         return data.imageUrl;
       } else {
         console.error("Failed to upload the image.");
@@ -132,7 +131,6 @@ const CreateMoviePage = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Movie creation successful", data);
 
         toast.success("Movie Created Successfully", {
           position: "top-center",

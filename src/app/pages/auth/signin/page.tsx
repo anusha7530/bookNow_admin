@@ -26,7 +26,6 @@ const SigninPage = () => {
       if (response.ok) {
         const data = await response.json();
         // Handle successful signin, e.g., show a success message
-        console.log("Admin login successful", data);
 
         toast.success("Admin login Successful", {
           position: "top-center",

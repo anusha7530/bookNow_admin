@@ -705,7 +705,6 @@ const CreateScreenPage: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Screen creation successful", data);
 
         toast.success("Screen Created Successfully", {
           position: "top-center",
@@ -717,7 +716,9 @@ const CreateScreenPage: React.FC = () => {
         });
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Screen Creation Failed", {
+        position: "top-center",
+      });
     }
   };
 
