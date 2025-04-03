@@ -59,7 +59,7 @@ const page = () => {
     const res = await fetch(
       `${
         process.env.NEXT_PUBLIC_BACKEND_API
-      }/movie/screensbycity/${city.toLowerCase()}`
+      }/movie/screensbycity/${city}`
     );
     const data = await res.json();
     if (data.ok) {
