@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import logo from "../../../public/logo.png";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,34 @@ const Navbar = () => {
         error
       );
       setIsAdminAuthenticated(false);
+    }
+  };
+  const handleLogout = async () => {
+    try {
+      const res = await fetch(
+        process.env.NEXT_PUBLIC_BACKEND_API + "/admin/logout",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
+
+      const data = await res.json();
+
+      if (res.ok) {
+        toast.success("Admin logout Successful", {
+          position: "top-center",
+        });
+        window.location.href = "/pages/auth/signin";
+      } else {
+        console.error("Logout failed:", data);
+      }
+    } catch (err) {
+      console.error("Logout error:", err);
+      window.location.href = "/pages/auth/signin";
     }
   };
   useEffect(() => {
@@ -89,6 +118,13 @@ const Navbar = () => {
               >
                 Add Celebrity
               </Link>
+              <button
+                className="bg-[#b92d14e8] px-4 py-2 rounded-lg"
+                type="button"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
             </>
           ) : (
             <>

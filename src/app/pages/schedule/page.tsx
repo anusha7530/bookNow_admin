@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 interface schedule {
@@ -31,16 +31,16 @@ interface Movie {
 }
 
 const page = () => {
-  const [schedule, setSchedule] = React.useState<schedule>({
+  const [schedule, setSchedule] = useState<schedule>({
     screenId: "",
     movieId: "",
     showTime: "",
     showDate: "",
   });
 
-  const [city, setCity] = React.useState("");
-  const [screens, setScreens] = React.useState<Screen[]>([]);
-  const [movies, setMovies] = React.useState<Movie[]>([]);
+  const [city, setCity] = useState("");
+  const [screens, setScreens] = useState<Screen[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   const getMovies = async () => {
     const res = await fetch(
@@ -50,7 +50,7 @@ const page = () => {
     setMovies(data.data);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     getMovies();
   }, []);
 
@@ -59,7 +59,7 @@ const page = () => {
     const res = await fetch(
       `${
         process.env.NEXT_PUBLIC_BACKEND_API
-      }/movie/screensbycity/${city}`
+      }/movie/screensbycity/${city.toLowerCase()}`
     );
     const data = await res.json();
     if (data.ok) {

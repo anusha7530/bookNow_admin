@@ -9,7 +9,8 @@ const SigninPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignin = async () => {
+  const handleSignin = async (e:any) => {
+    e?.preventDefault();
     try {
       const response = await fetch(
         process.env.NEXT_PUBLIC_BACKEND_API + "/admin/login",
@@ -30,7 +31,7 @@ const SigninPage = () => {
         toast.success("Admin login Successful", {
           position: "top-center",
         });
-        window.location.href = '/pages/movie/createmovie'
+        window.location.href = '/'
       } else {
         // Handle signin error
         console.error("Admin login failed", response.statusText);
